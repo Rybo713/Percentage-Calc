@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <title>Percentage Calculator</title>
+
+</head>
+<body>
+<div class="container">
+  <h1>Percentage Calculator</h1>
+  <p>What is
+    <input type="text" id="percentage" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" placeholder="">
+    % of
+    <input type="text" id="amount" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" placeholder="">
+    ?
+    <button class="calc" id="calculate">Calculate</button>
+    <h5 id="result"></h5>
+  </p>
+
+  <p>Percentage gain or loss from
+  <input type="text" id="original" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" placeholder="">
+    to
+  <input type="text" id="new1" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" placeholder="">
+    ?
+  <button class="calc" id="calculate1">Calculate</button>
+  <h5 id="result1"></h5>
+  </p>
+
+  <p>
+  <input type="text" id="x" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" placeholder="">
+  is what % of
+  <input type="text" id="y" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" placeholder="">
+  ?
+  <button class="calc" id="calculate2">Calculate</button>
+  <h5 id="result2"></h5>
+  </p>
+  </div>
+
+<button class="darkmodebutton" onclick="DarkMode()"><img src="C:\Users\r777w\Desktop\FinalGradeCalc\dark-mode.png"></button>
+
+<div class="dropdown" style="float:right;">
+  <button class="dropbtn"><img src="C:\Users\r777w\Desktop\FinalGradeCalc\226188.png"></button>
+  <div class="dropdown-content">
+    <a href="#">FAQ</a>
+    <a href="#">About</a>
+  </div>
+</div>
+
+<br>
+<div class="faq">
+  <p>
+    <h3>About Percentage Calulator</h3>
+
+    Percentage Calculator is a free online tool that helps you calculate percentages quickly and easily. Whether you're calculating sales tax, discounts, or tips, Percentage Calculator can help.
+
+    To use Percentage Calculator, simply enter the total amount and the percentage that you want to calculate. The calculator will then display the percentage value.
+
+    Percentage Calculator is a great tool for a variety of tasks. It can be used by students, businesses, and anyone else who needs to calculate percentages.
+
+    <h3>What are some common uses for a percentage calculator?</h3>
+
+    Percentage calculators can be used for a variety of tasks, including:
+
+    - Calculating sales tax
+    - Calculating discounts
+    - Calculating tips
+    - Calculating grades
+    - Calculating interest rates
+    - Calculating profit margins
+    - Calculating ratios
+
+  </p>
+</div>
+<br>
+<script>
+  function calculate() {
+    var amount = document.getElementById("amount").value;
+    var percentage = document.getElementById("percentage").value;
+
+    var result = (amount / 100) * percentage;
+
+    document.getElementById("result").innerHTML = result;
+  }
+
+  document.getElementById("calculate").addEventListener("click", calculate);
+
+  var input = document.getElementById("amount");
+  input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("calculate").click();
+    }
+  });
+
+  var input = document.getElementById("percentage");
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("calculate").click();
+      }
+  });
+
+  function calculate1() {
+    var original = document.getElementById("original").value;
+    var new1 = document.getElementById("new1").value;
+
+    var difference = new1 - original;
+    var percentage = difference / original * 100;
+
+    document.getElementById("result1").innerHTML = percentage + "%";
+
+      if (percentage > 0) {
+        document.getElementById("result1").classList.remove("negative");
+        document.getElementById("result1").classList.add("positive");
+      } else if (percentage < 0) {
+        document.getElementById("result1").classList.remove("positive");
+        document.getElementById("result1").classList.add("negative");
+      } else {
+        document.getElementById("result1").classList.remove("positive");
+        document.getElementById("result1").classList.remove("negative");
+      }
+  }
+
+  document.getElementById("calculate1").addEventListener("click", calculate1);
+
+  var input = document.getElementById("original");
+  input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("calculate1").click();
+    }
+  });
+
+  var input = document.getElementById("new1");
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("calculate1").click();
+      }
+  });
+
+  function calculate2() {
+    var x = document.getElementById("x").value;
+    var y = document.getElementById("y").value;
+
+    var percentage = x / y * 100;
+
+    document.getElementById("result2").innerHTML = percentage + "%";
+  }
+
+  document.getElementById("calculate2").addEventListener("click", calculate2);
+
+  var input = document.getElementById("x");
+  input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("calculate2").click();
+    }
+  });
+
+  var input = document.getElementById("y");
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("calculate2").click();
+      }
+  });
+
+  function DarkMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+  }
+
+</script>
+
+</body>
+
+<footer>
+  <p class="footer">2023 ToolsforEveryone </p>
+</footer>
+
+</html>
