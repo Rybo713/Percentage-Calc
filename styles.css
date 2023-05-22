@@ -1,5 +1,10 @@
+html {
+  -webkit-text-size-adjust: 100%;
+}
 body {
   font-family: Segoe UI;
+  display: inline-block;
+  width: 100%;
 }
 
 h1 {
@@ -8,15 +13,19 @@ h1 {
 
 h5 {
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
 }
 p {
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 div {
   text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 input {
@@ -25,7 +34,7 @@ input {
   padding: 2px;
   width: 100px;
   height: 50px;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -66,7 +75,7 @@ input {
   font-weight: bold;
 }
 
-.container {
+// .container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -89,53 +98,6 @@ input {
   color: white;
 }
 
-footer {
-  position:absolute;
-  bottom:0;
-  right:1;
-  left:5;
-}
-
-.footer {
-  font-size: 15px;
-}
-
-.dropbtn {
-  background-color: transparent;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-.dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {background-color: transparent;}
-
 .positive {
   color: green;
 }
@@ -143,3 +105,9 @@ footer {
 .negative {
   color: red;
 }
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
