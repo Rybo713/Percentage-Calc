@@ -4,6 +4,7 @@ html {
 body {
   font-family: Segoe UI;
   display: inline-block;
+  width:100%;
 }
 
 h1 {
@@ -75,24 +76,6 @@ input {
   font-weight: bold;
 }
 
-// .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.faq {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-
 .dark-mode {
   background-color: #212020;
   color: white;
@@ -105,12 +88,6 @@ input {
 .negative {
   color: red;
 }
-
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
 
 footer {
   font-size: 10px;
